@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NL TRADER 7K - AI PATTERN MASTER</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #000; color: #ffd700; overflow-x: hidden; }
+        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; }
+        
+        .clock-container { position: relative; z-index: 10; margin-top: 15px; text-align: center; }
+        .clock { font-size: 28px; font-weight: bold; background: linear-gradient(to bottom, #fcf6ba, #bf953f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 3px; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+
+        .header-logo {
+            width: 130px; height: 130px; object-fit: cover; border-radius: 50%;
+            border: 3px solid #ffd700; box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            margin: 15px 0; z-index: 10;
+        }
+
+        .shining-gold {
+            font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; text-align: center;
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 3s infinite linear; background-size: 200% auto; 
+            margin-bottom: 20px; cursor: pointer;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .container { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; z-index: 10; padding: 20px; box-sizing: border-box; }
+
+        .input-group { width: 310px; margin-bottom: 12px; background: rgba(15, 15, 15, 0.98); border-radius: 15px; padding: 12px; border: 1px solid #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.15); }
+        .label-tag { background: #ffd700; color: black; font-size: 11px; padding: 3px 10px; border-radius: 5px; font-weight: bold; display: inline-block; margin-bottom: 6px; }
+        input { width: 95%; background: transparent; border: none; color: white; outline: none; font-size: 15px; font-weight: 500; }
+
+        .btn-container { display: flex; gap: 12px; margin-top: 15px; }
+        .btn { background: #ffd700; border: none; padding: 14px 35px; border-radius: 12px; font-weight: bold; cursor: pointer; color: black; box-shadow: 0 0 20px #ffd700; transition: 0.3s; font-size: 15px; }
+        
+        #signal-page { display: none; text-align: center; }
+        .pattern-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; width: 220px; }
+        .pattern-slot { width: 65px; height: 45px; border: 1px solid #ffd700; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; border-radius: 10px; background: rgba(255, 215, 0, 0.05); }
+        .final-result { font-size: 32px; font-weight: bold; color: #fff; text-shadow: 0 0 30px #ffd700; margin: 15px 0; height: 50px; letter-spacing: 2px; }
+        
+        .choice-btn { width: 120px; padding: 15px; font-size: 18px; font-weight: 900; cursor: pointer; border-radius: 15px; border: none; transition: 0.2s; text-transform: uppercase; }
+        .big-btn { background: linear-gradient(135deg, #00ff00, #004400); color: #fff; box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); }
+        .small-btn { background: linear-gradient(135deg, #ff0000, #440000); color: #fff; box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
+        
+        .brand-text { position: absolute; font-size: 16px; font-weight: bold; color: #ff4500; text-shadow: 0 0 10px #ff0000; animation: move 15s linear infinite; z-index: 5; }
+        @keyframes move { 0% {top:5%; left:5%;} 25% {top:5%; left:80%;} 50% {top:90%; left:80%;} 75% {top:90%; left:5%;} 100% {top:5%; left:5%;} }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div class="brand-text">🔥 NL TRADER 💀</div>
+
+    <div class="container" id="login-page">
+        <div class="clock-container"><div id="login-clock" class="clock">00:00:00</div></div>
+        
+        <img src="https://i.postimg.cc/ZnyT83JG/Screenshot-20260128-094757.jpg" alt="NL Trader Logo" class="header-logo">
+        
+        <div class="shining-gold" onclick="verifyPin()">LOSS RECOVERY PANEL NL</div>
+        
+        <div class="input-group"><span class="label-tag">Game Version</span><br><input type="text" value="2.0" readonly></div>
+        <div class="input-group"><span class="label-tag">Game Name</span><br><input type="text" value="DK WIN" readonly></div>
+        <div class="input-group"><span class="label-tag">Play Mode</span><br><input type="text" value="Safe ( 98% Accuracy )" readonly style="color: #00ff00; font-weight: bold;"></div>
+
+        <div class="input-group">
+            <span class="label-tag">License Key</span><br>
+            <input type="password" id="licenseKey" placeholder="Enter License Key">
+        </div>
+
+        <div class="btn-container">
+            <button class="btn" onclick="checkFinalLogin()">LOGIN</button>
+        </div>
+        
+        <p style="font-size: 10px; color: #555; margin-top: 15px;">Note: Verify Pin by clicking title before Login</p>
+    </div>
+
+    <div class="container" id="signal-page">
+        <div class="clock-container"><div id="signal-clock" class="clock">00:00:00</div></div>
+        <img src="https://i.postimg.cc/ZnyT83JG/Screenshot-20260128-094757.jpg" alt="NL Trader Logo" class="header-logo">
+        <div class="shining-gold">NL 30S AI PATTERN MASTER</div>
+        <div class="pattern-display" id="pattern-list">
+            <div class="pattern-slot">-</div><div class="pattern-slot">-</div><div class="pattern-slot">-</div>
+            <div class="pattern-slot">-</div><div class="pattern-slot">-</div><div class="pattern-slot">-</div>
+        </div>
+        <div id="final-result" class="final-result">READY...</div>
+        <div class="btn-container">
+            <button class="choice-btn big-btn" onclick="addPattern('BIG')">BIG</button>
+            <button class="choice-btn small-btn" onclick="addPattern('SMALL')">SMALL</button>
+        </div>
+        <button class="btn" style="background:#111; color:#ffd700; border:1px solid #ffd700; margin-top:20px;" onclick="clearPattern()">CLEAR</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        let isPinVerified = false;
+
+        function updateTime() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Dhaka', hour12: true });
+            document.getElementById('login-clock').innerText = time;
+            if(document.getElementById('signal-clock')) document.getElementById('signal-clock').innerText = time;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // পিন ভেরিফিকেশন
+        function verifyPin() {
+            const pin = prompt("Enter Security Pin :");
+            if (pin === "7890") {
+                isPinVerified = true;
+                alert("Pin Verified! Now you can Login with License Key.");
+            } else {
+                alert("Wrong Pin!");
+            }
+        }
+
+        // ফাইনাল লগইন চেক
+        function checkFinalLogin() {
+            const key = document.getElementById('licenseKey').value;
+            if (!isPinVerified) {
+                alert("Please click 'LOSS RECOVERY PANEL NL' and enter Pin first!");
+                return;
+            }
+            if (key === "NL30SMODLICENCE") {
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('signal-page').style.display = 'flex';
+            } else {
+                alert("Wrong License Key!");
+            }
+        }
+
+        let patterns = [];
+        function addPattern(type) {
+            if (patterns.length < 6) {
+                patterns.push(type);
+                renderPatterns();
+                if (patterns.length === 6) {
+                    document.getElementById('final-result').innerText = "SCANNING...";
+                    setTimeout(() => {
+                        let res = Math.random() > 0.5 ? "BIG 🟢" : "SMALL 🔴";
+                        document.getElementById('final-result').innerText = "SIGNAL: " + res;
+                        document.getElementById('final-result').style.color = res.includes("BIG") ? "#00ff00" : "#ff0000";
+                    }, 3000);
+                }
+            }
+        }
+
+        function renderPatterns() {
+            const slots = document.querySelectorAll('.pattern-slot');
+            slots.forEach((slot, i) => {
+                slot.innerText = patterns[i] || "-";
+                slot.style.color = patterns[i] === 'BIG' ? '#00ff00' : (patterns[i] === 'SMALL' ? '#ff0000' : '#ffd700');
+            });
+        }
+
+        function clearPattern() {
+            patterns = [];
+            renderPatterns();
+            document.getElementById('final-result').innerText = "WAITING...";
+            document.getElementById('final-result').style.color = "#fff";
+        }
+
+        particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#ffd700" }, "opacity": { "value": 0.5 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#ffd700", "opacity": 0.3 }, "move": { "enable": true, "speed": 2 } } });
+    </script>
+</body>
+</html>
